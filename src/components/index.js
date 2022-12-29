@@ -2,7 +2,7 @@ import { styled } from 'nativewind';
 
 import {
     SafeAreaView as RNSafeAreaView,
-    ScrollView as RNScrollView,
+    // ScrollView as RNScrollView,
     Text as RNText,
     View as RNView,
     TextInput as RNTextInput,
@@ -14,7 +14,7 @@ import {
 } from 'react-native';
 
 const SafeAreaView = styled(RNSafeAreaView);
-const ScrollView = styled(RNScrollView);
+// const ScrollView = styled(RNScrollView);
 const Text = styled(RNText);
 const View = styled(RNView);
 const TextInput = styled(RNTextInput);
@@ -26,7 +26,7 @@ const TouchableOpacity = styled(RNTouchableOpacity);
 
 export {
     SafeAreaView,
-    ScrollView,
+    // ScrollView,
     Text,
     View,
     TextInput,

@@ -1,10 +1,7 @@
 import React, { useEffect } from 'react';
 import { NavigationContainer } from '@react-navigation/native';
-import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import LoginScreen from './src/screens/LoginScreen';
 import SplashScreen from 'react-native-splash-screen';
-
-const Stack = createNativeStackNavigator();
+import Navigation from './src/navigation/Navigation';
 
 const App = () => {
 
@@ -14,15 +11,7 @@ const App = () => {
 
   return (
     <NavigationContainer>
-      <Stack.Navigator >
-        <Stack.Screen
-          name="Login"
-          component={LoginScreen}
-          options={{ headerShown: false }}
-
-        />
-        {/* <Stack.Screen name="Profile" component={ProfileScreen} /> */}
-      </Stack.Navigator>
+      <Navigation />
     </NavigationContainer>
 
   );
