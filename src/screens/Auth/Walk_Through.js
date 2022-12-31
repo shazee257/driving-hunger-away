@@ -3,14 +3,10 @@ import AppIntroSlider from 'react-native-app-intro-slider';
 import image1 from '../../assets/images/sliderImage1.png';
 import image2 from '../../assets/images/sliderImage2.png';
 import image3 from '../../assets/images/sliderImage3.png';
-// useNavigation hook
-import { useNavigation } from '@react-navigation/native';
+import { connect } from 'react-redux';
 
-const Walk_Through = () => {
-
-    const navigation = useNavigation();
-
-
+const WalkThrough = ({ navigation, user }) => {
+    console.log("user ===>", user);
 
     const slides = [
         {
@@ -39,12 +35,7 @@ const Walk_Through = () => {
     const _renderItem = ({ item }) => {
         return (
             <View className='flex-1 bg-white'>
-                <StatusBar
-                    animated={true}
-                    backgroundColor="#056721"
-                    barStyle="default"
-                    hidden={false}
-                />
+                <StatusBar backgroundColor="#056721" />
                 <Image source={item.image} className='w-full h-2/3' />
                 <View className='mx-8 mt-6 text-[#056721] space-y-1'>
                     <Text className=' text-[#056721] text-2xl font-bold'>{item.title}</Text>
@@ -73,13 +64,13 @@ const Walk_Through = () => {
 
             <View className='flex flex-row justify-between mx-8 space-x-4 mb-6'>
                 <TouchableOpacity
-                    onPress={() => navigation.navigate('Login')}
+                    onPress={() => navigation.navigate('Get_Started')}
                     className='bg-[#056721] justify-center items-center rounded-lg w-40 py-2'>
                     <Text className='text-white text-lg font-medium'>Get Started</Text>
                 </TouchableOpacity>
 
                 <TouchableOpacity
-                    onPress={() => navigation.navigate('Login')}
+                    onPress={() => navigation.navigate('Sign_In')}
                     className='bg-white justify-center items-center rounded-lg w-40 py-2 border border-[#056721]'>
                     <Text className='text-[#056721] text-lg font-medium'>Sign In</Text>
                 </TouchableOpacity>
@@ -88,4 +79,15 @@ const Walk_Through = () => {
     )
 }
 
-export default Walk_Through
+const mapStateToProps = (state, props) => {
+    const { id, name, email } = state.user;
+
+    return {
+        id,
+        name,
+        email
+    };
+};
+
+export default connect(mapStateToProps)(WalkThrough);
+

@@ -1,10 +1,10 @@
 import { View, Text, Image, StatusBar, TouchableOpacity } from '../../components';
 import AntDesign from 'react-native-vector-icons/AntDesign';
 
-
-const Walk_Through = () => {
+const GetStarted = ({ navigation }) => {
     return (
         <View className='flex-1 bg-white'>
+            <StatusBar backgroundColor="#056721" />
             <TouchableOpacity onPress={() => navigation.goBack()} className='ml-4 mt-4'>
                 <AntDesign name="arrowleft" size={24} color="#4E4B66" />
             </TouchableOpacity>
@@ -47,4 +47,4 @@ const Walk_Through = () => {
     )
 }
 
-export default Walk_Through
+export default GetStarted

@@ -23,6 +23,9 @@ const ImageBackground = styled(RNImageBackground);
 const StatusBar = styled(RNStatusBar);
 const Button = styled(RNButton);
 const TouchableOpacity = styled(RNTouchableOpacity);
+TouchableOpacity.defaultProps = {
+    activeOpacity: 0.8,
+};
 
 export {
     SafeAreaView,
