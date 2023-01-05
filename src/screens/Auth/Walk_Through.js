@@ -3,7 +3,6 @@ import AppIntroSlider from 'react-native-app-intro-slider';
 import image1 from '../../assets/images/sliderImage1.png';
 import image2 from '../../assets/images/sliderImage2.png';
 import image3 from '../../assets/images/sliderImage3.png';
-import { connect } from 'react-redux';
 
 const WalkThrough = ({ navigation, user }) => {
     console.log("user ===>", user);
@@ -79,15 +78,4 @@ const WalkThrough = ({ navigation, user }) => {
     )
 }
 
-const mapStateToProps = (state, props) => {
-    const { id, name, email } = state.user;
-
-    return {
-        id,
-        name,
-        email
-    };
-};
-
-export default connect(mapStateToProps)(WalkThrough);
-
+export default WalkThrough;
